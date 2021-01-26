@@ -1,7 +1,14 @@
-<?php 
+<?php
+    //Sessions
+
+    session_start();
+
+    $login = "admin";
+    $password = "12345";
+
     //Variables
 
-    $title = "School of Net - Course";
+    $title = "School of Net - PHP Course";
     $name = "Iago";
     $last_name = "Martins";
     $age = 27;
@@ -18,8 +25,8 @@
     //Associative arrays
 
     $data = array(
-        "title" => "School of Net - Example",
-        "link" => "www.schoolofnet.com",
+        "title" => "School of Net - Website",
+        "link" => "https://www.schoolofnet.com",
         "content" => array(
             array(
                 "title" => "Associative Arrays",
@@ -38,30 +45,52 @@
             )
         )
     );
+
+    //Cookies
+
+    setcookie("user", "Iago Martins");    
 ?>
 <head>
     <title><?= $title; ?></title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1><?= $title; ?></h1>
+<body bgcolor="#333333">
+    <h1 style="margin-top: -20px; text-align: center;"><?= $title; ?></h1>
     <h3><?= $name." ".$last_name; ?></h3>
     <p>Age: <?= $age; ?></p>
     <p>E-mail: <?= $email; ?></p>
+
+    <!-- Sessions Classroom -->
+
+    <h1>Login Status:</h1>
+
+    <?php
+    if($login == "admin" && $password == "12345") {
+        $_SESSION['login'] = true;
+        echo "Success!";
+    }
+    else {
+        echo "Error!";
+    }
+    ?>
+
+    <a href="secret.php" class="default-link">Get in</a>
 
     <!-- Loop Classroom -->
 
     <h1>For Loop</h1>
     <h3>Example:</h3>
+    <h5>These elements were inserted in this page with the loop "for".</h5>
 
     <?php for ($i = 0; $i < sizeof($list_for); $i++) { ?>
-        
+
         <p>Element: <?= $i ?> - <?= $list_for[$i] ?></p>
 
     <?php } ?>
 
     <!-- Arrays Classroom -->
 
-    <h1><a href="<?= $data['link'] ?>"><?= $data['title'] ?></a></h1>
+    <h1 class="title-link"><a href="<?= $data['link'] ?>" target="_blank"><?= $data['title'] ?></a></h1>
     <hr>
 
     <?php foreach ($data['content'] as $key => $value) { ?>
@@ -70,5 +99,12 @@
         <p><?= $value['text'] ?></p>
         <hr>
     <?php } ?>
+
+    <!-- Cookies Classroom -->
+
+    <h1>Cookies</h1>
+    <h3>Example:</h3>
+
+    <p><?= $_COOKIE['user']." " ?>has used a cookie to write his name. Cookies are variables that are stored inside the user browser.</p>
 
 </body>

@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #dedede;
+}
+h1 {
+  background-color: #111111;
+  padding: 20px;
+  margin-left: -20px;
+  width: 100vw;
+}
+.title-link {
+  padding: 20px;
+  background-color: #111111;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: -20px;
+  border-radius: 0 20px 20px 0;
+}
+.title-link a,
+.default-link {
+  color: #1399ff;
+  text-decoration: none;
+}
