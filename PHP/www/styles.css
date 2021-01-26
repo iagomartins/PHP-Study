@@ -8,6 +8,20 @@ h1 {
   margin-left: -20px;
   width: 100vw;
 }
+label {
+  margin-bottom: 10px;
+}
+input,
+textarea {
+  -webkit-appearance: none;
+  border: 1px solid #dedede;
+  background-color: #333333;
+  color: #dedede;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 40px;
+  padding: 0 16px;
+}
 .title-link {
   padding: 20px;
   background-color: #111111;
@@ -21,4 +35,18 @@ h1 {
 .default-link {
   color: #1399ff;
   text-decoration: none;
+}
+.form-line {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.form-data {
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px dashed #dedede;
+}
+.form-data span {
+  margin-bottom: 20px;
 }

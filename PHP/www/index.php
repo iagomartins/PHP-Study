@@ -107,4 +107,31 @@
 
     <p><?= $_COOKIE['user']." " ?>has used a cookie to write his name. Cookies are variables that are stored inside the user browser.</p>
 
+    <!-- GET & POST - Forms -->
+
+    <h1>Working With Forms - GET & POST</h1>
+
+    <h3>This form is using the post method to fill data in this HTML document.</h3>
+
+    <form action="index.php" method="post">
+        <div class="form-line">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Insert your name here...">
+        </div>
+        <div class="form-line">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" placeholder="Insert your e-mail here...">
+        </div>
+        <div class="form-line">
+            <label for="message">Message:</label>
+            <textarea name="message" cols="30" rows="10"></textarea>
+        </div>
+        <input type="submit" value="Send">
+    </form>
+    <div class="form-data">
+        <h2>Results:</h2>
+        <p>Name: <?= $_POST['name'] ?></p>
+        <p>Email: <?= $_POST['email'] ?></p>
+        <p>Message: <?= $_POST['message'] ?></p>
+    </div>
 </body>
